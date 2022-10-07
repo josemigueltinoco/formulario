@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body style="background-color: #DAF7A6;">
+    <div class="col-lg-8 mx-auto p-4 py-md-5">
+        <main>
+            <div class="row g-5">
+                <div class="col-md-15 mx-auto" style="text-align: center; color: #581845; font-weight: bolder;">
+                    <div class="card">
+                        <div class="card-header text-white" style="background-color: #FFC300;">
+                            <p style="color: #581845; text-align: center;"><b>Formulario de registro</b></p>
+                        </div>
+                        <div class="card-body" style="background-color: #FF5733;">
+                            <form id="form">
+                                <div class="row">
+                                    <div class="col-md-4 mb-3">
+                                        <label class="form-label">Cedula</label>
+                                        <div class="input-group mb-0">
+                                            <input type="number" class="form-control" id="cedula">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <label class="form-label">Nombre</label>
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control" id="nombre"
+                                                onchange="javascript:this.value=this.value.toUpperCase()">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <label class="form-label">Apellido</label>
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control" id="apellido"
+                                                onchange="javascript:this.value=this.value.toUpperCase()">
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-4 mb-3">
+                                        <label class="form-label">Edad</label>
+                                        <div class="input-group mb-3">
+                                            <input type="number" class="form-control" id="edad">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 mb-3">
+                                        <label class="form-label">Dirección</label>
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control" id="direccion">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <label class="form-label">Celular</label>
+                                        <div class="input-group mb-3">
+                                            <input type="number" class="form-control" id="celular">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 mb-3">
+                                        <label class="form-label">País</label>
+                                        <div class="input-group mb-3">
+                                            <select class="form-control" id="pais">
+                                                <option value="def">---------</option>
+                                                <option value="arg">Argentina</option>
+                                                <option value="bra">Brazil</option>
+                                                <option value="col">Colombia</option>
+                                                <option value="pana">Panamá</option>
+                                                <option value="par">Paraguay</option>
+                                                <option value="per">Perú</option>
+                                                <option value="ecua">Ecuador</option>
+                                                <option value="vene">Venezuela</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <label class="form-label">Ciudad</label>
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control" id="ciudad">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 mb-3">
+                                        <label class="form-label">Correo Electrónico</label>
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                                            <input type="mail" class="form-control" id="correo"
+                                                onchange="javascript:this.value=this.value.toLowerCase()">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <label class="form-label">Sexo</label><br>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="sexo" id="sexo1"
+                                                value="Masculino">
+                                            <label class="form-check-label" for="Sexo1">Masculino</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="sexo" id="sexo2"
+                                                value="Femenino">
+                                            <label class="form-check-label" for="sexo2">Femenino</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-8 mb-3 pt-4">
+                                        <button type="button" class="btn btn-danger" onclick="Guardar()">Guardar <i
+                                                class="bi bi-check2-circle"></i></button>
+                                        <button type="button" class="btn btn-danger" onclick="Listar()">Listar <i
+                                                class="bi bi-arrow-repeat"></i></button>
+
+
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-15 mx-auto" style="text-align: center; color: #581845; font-weight: bolder;">
+                    <div class="card">
+                        <div class="card-header text-white" style="background-color: #FFC300;"><i
+                                class="bi bi-list-check me-2"></i>
+                            <p style="color: #581845; text-align: center;"><b>Detalles</b></p>
+                        </div>
+                        <div class="card-body" style="background-color: #FF5733;">
+                            <div class="table-responsive">
+                                <table class="table table-hover table-striped table-home">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Cédula</th>
+                                            <th scope="col">Nombre</th>
+                                            <th scope="col">Sexo</th>
+                                            <th scope="col">Edad</th>
+                                            <th scope="col">Dirección</th>
+                                            <th scope="col">Celular</th>
+                                            <th scope="col">País</th>
+                                            <th scope="col">Ciudad</th>
+                                            <th scope="col">Email</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="data">
+                                        <tr>
+                                            <td colspan="10" class="text-center">No hay datos registrados</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+        integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
+        crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+    <script>
+
+        Listar();
+    </script>
+</body>
+
+</html>
